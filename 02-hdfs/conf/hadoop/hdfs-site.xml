@@ -23,14 +23,14 @@
     </property>
 
     <!-- keep this in master only -->
-    <property>
+    <!-- <property>
         <name>dfs.namenode.name.dir</name>
-        <value>/home/hadoop/data/hdfs/namenode</value>
-    </property>
+        <value>/opt/hadoop</value>
+    </property> -->
 
     <!-- keep this in datanodes only -->
     <property>
         <name>dfs.datanode.data.dir</name>
-        <value>/home/hadoop/data/hdfs/datanode</value>
+        <value>/opt/hadoop</value>
     </property>
 </configuration>

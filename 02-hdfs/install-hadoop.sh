@@ -36,6 +36,9 @@ printf "<<<< 3. done. \n\n"
 # Configuring Hadoop
 echo ">>>> 4. Configuring Hadoop... <<<<"
 
+echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'mkdir /opt/hadoop'
+echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'mkdir /opt/mapred'
+
 echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'source conf/config.sh && echo "export JAVA_HOME=$JAVA_HOME" >> $HADOOP_PARENT_DIR/hadoop-${HADOOP_VERSION}/etc/hadoop/hadoop-env.sh'
 
 echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'source conf/config.sh && echo "export HDFS_DATANODE_USER=root" >> $HADOOP_PARENT_DIR/hadoop-${HADOOP_VERSION}/etc/hadoop/hadoop-env.sh'
@@ -44,7 +47,7 @@ echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'source conf/config.sh && echo "exp
 echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'source conf/config.sh && echo "export YARN_NODEMANAGER_USER=root" >> $HADOOP_PARENT_DIR/hadoop-${HADOOP_VERSION}/etc/hadoop/hadoop-env.sh'
 echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'source conf/config.sh && echo "export HDFS_NAMENODE_USER=root" >> $HADOOP_PARENT_DIR/hadoop-${HADOOP_VERSION}/etc/hadoop/hadoop-env.sh'
 
-echo $HADOOP_USER_PASSWORD | sudo -S c conf/hadoop/* $HADOOP_PARENT_DIR/hadoop-${HADOOP_VERSION}/etc/hadoop/
+echo $HADOOP_USER_PASSWORD | sudo -S cp conf/hadoop/* $HADOOP_PARENT_DIR/hadoop-${HADOOP_VERSION}/etc/hadoop/
 echo $HADOOP_USER_PASSWORD | sudo -S chown hadoop $HADOOP_PARENT_DIR/hadoop-${HADOOP_VERSION}
 
 printf "<<<< 4. done. \n\n"
