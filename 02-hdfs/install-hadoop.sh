@@ -36,8 +36,9 @@ printf "<<<< 3. done. \n\n"
 # Configuring Hadoop
 echo ">>>> 4. Configuring Hadoop... <<<<"
 
+echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'mkdir /opt/hadoop'
 echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'mkdir /opt/hadoop/namenode'
-echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'mkdir /opt/hadoop/namenode'
+echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'mkdir /opt/hadoop/datanode'
 
 echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'source conf/config.sh && echo "export JAVA_HOME=$JAVA_HOME" >> $HADOOP_PARENT_DIR/hadoop-${HADOOP_VERSION}/etc/hadoop/hadoop-env.sh'
 
