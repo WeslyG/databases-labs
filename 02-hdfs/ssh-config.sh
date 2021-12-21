@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# 0. Loading Variables
+source conf/config.sh
+
 echo $HADOOP_USER_PASSWORD | sudo -S bash -c 'cat conf/hosts >> /etc/hosts'
 
 ssh-keygen -t rsa ~/.ssh/id_rsa # generate ssh key for the node
