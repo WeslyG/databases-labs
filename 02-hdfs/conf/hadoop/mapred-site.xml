@@ -18,10 +18,6 @@
 
 <configuration>
     <property>
-        <name>mapred.system.dir</name>
-        <value>/opt/mapred</value>
-    </property>
-    <property>
             <name>mapreduce.framework.name</name>
             <value>yarn</value>
     </property>

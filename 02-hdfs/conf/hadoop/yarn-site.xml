@@ -29,24 +29,24 @@
             <name>yarn.nodemanager.aux-services</name>
             <value>mapreduce_shuffle</value>
     </property>
-
         <property>
-                <name>yarn.nodemanager.resource.memory-mb</name>
-                <value>2048</value>
+                <name>yarn.resourcemanager.scheduler.address</name>
+                <value>master:8030</value>
         </property>
-
         <property>
-                <name>yarn.scheduler.maximum-allocation-mb</name>
-                <value>2048</value>
+                <name>yarn.resourcemanager.address</name>
+                <value>master:8032</value>
         </property>
-
         <property>
-                <name>yarn.scheduler.minimum-allocation-mb</name>
-                <value>1024</value>
+                <name>yarn.resourcemanager.webapp.address</name>
+                <value>master:8088</value>
         </property>
-
         <property>
-                <name>yarn.nodemanager.vmem-check-enabled</name>
-                <value>false</value>
+                <name>yarn.resourcemanager.resource-tracker.address</name>
+                <value>master:8031</value>
+        </property>
+        <property>
+                <name>yarn.resourcemanager.admin.address</name>
+                <value>master:8033</value>
         </property>
 </configuration>
